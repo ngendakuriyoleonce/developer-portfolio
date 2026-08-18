@@ -1,58 +1,174 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Developer Portfolio — Laravel 13
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A full-featured personal developer portfolio built with Laravel 13, featuring a public portfolio website, admin dashboard, REST API, Redis caching, Docker support, and PDF resume generation.
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Public Portfolio** — Home, About, Skills, Experience, Education, Certifications, Projects, Services, Contact
+- **Admin Dashboard** — Full CRUD for all portfolio sections
+- **Authentication** — Laravel Breeze with admin middleware
+- **Roles & Permissions** — Spatie Permission (Admin/Editor roles)
+- **REST API** — Public API endpoints for portfolio data
+- **Sanctum** — API authentication support
+- **Redis** — Caching and queue processing
+- **PDF Resume** — Downloadable CV generated with DomPDF
+- **Contact System** — Contact form with message management
+- **Dark/Light Mode** — Theme toggle with localStorage
+- **Responsive Design** — Mobile-first with Tailwind CSS
+- **Docker** — Containerized deployment with Nginx
+- **Testing** — Feature and unit tests
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Tech Stack
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+| Technology | Purpose |
+|---|---|
+| Laravel 13 | PHP Framework |
+| PHP 8.5 | Runtime |
+| MySQL / SQLite | Database |
+| Redis | Cache & Queue |
+| Tailwind CSS | Styling |
+| Alpine.js | Interactivity |
+| Vite | Asset bundling |
+| Docker | Containerization |
+| Nginx | Web server |
+| DomPDF | PDF generation |
+| Spatie Permission | Authorization |
 
-## Learning Laravel
+## Installation
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Prerequisites
+- PHP 8.5+
+- Composer
+- Node.js 18+
+- MySQL or SQLite
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
-
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+### Setup
 
 ```bash
-composer require laravel/boost --dev
+# Clone the repository
+git clone https://github.com/tahssin/developer-portfolio.git
+cd developer-portfolio
 
-php artisan boost:install
+# Install PHP dependencies
+composer install
+
+# Install Node dependencies
+npm install
+
+# Create environment file
+cp .env.example .env
+
+# Generate application key
+php artisan key:generate
+
+# Create database (SQLite)
+touch database/database.sqlite
+
+# Run migrations and seed
+php artisan migrate:fresh --seed
+
+# Build frontend assets
+npm run build
+
+# Start the server
+php artisan serve
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+Visit: http://localhost:8000
 
-## Contributing
+### Default Credentials
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+| Email | Password | Role |
+|---|---|---|
+| admin@portfolio.com | password | Admin |
 
-## Code of Conduct
+## Docker Setup
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+# Copy Docker environment
+cp .env.docker .env
 
-## Security Vulnerabilities
+# Build and start containers
+docker compose up -d --build
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# Run migrations
+docker compose exec app php artisan migrate:fresh --seed
+
+# Generate key
+docker compose exec app php artisan key:generate
+```
+
+Visit: http://localhost:8080
+
+## API Documentation
+
+### Public Endpoints
+
+```
+GET /api/profile       — Developer profile
+GET /api/skills        — Skills by category
+GET /api/projects      — Published projects
+GET /api/projects/{slug} — Single project
+GET /api/experiences   — Work experience
+GET /api/education     — Education records
+GET /api/services      — Services offered
+```
+
+### Example Response
+
+```json
+{
+    "data": {
+        "name": "Tahssin",
+        "title": "Junior Full-Stack Laravel Developer",
+        "bio": "..."
+    }
+}
+```
+
+## Project Structure
+
+```
+├── app/
+│   ├── Http/Controllers/
+│   │   ├── Admin/          # Admin CRUD controllers
+│   │   ├── Api/            # REST API controllers
+│   │   └── Portfolio/      # Public page controllers
+│   ├── Models/             # Eloquent models
+│   ├── Jobs/               # Queue jobs
+│   └── Services/           # Cache service
+├── config/
+├── database/
+│   ├── factories/          # Model factories
+│   ├── migrations/         # Database migrations
+│   └── seeders/            # Database seeders
+├── docker/                 # Docker configuration
+├── resources/
+│   └── views/
+│       ├── admin/          # Admin dashboard views
+│       ├── portfolio/      # Public portfolio views
+│       └── components/     # Blade components
+├── routes/
+│   ├── web.php             # Web routes
+│   └── api.php             # API routes
+├── tests/                  # Automated tests
+├── Dockerfile
+├── docker-compose.yml
+└── README.md
+```
+
+## Testing
+
+```bash
+php artisan test
+```
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+MIT License.
+
+## Author
+
+**Tahssin** — Junior Full-Stack Laravel Developer
+- GitHub: [github.com/tahssin](https://github.com/tahssin)
+- LinkedIn: [linkedin.com/in/tahssin](https://linkedin.com/in/tahssin)

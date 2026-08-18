@@ -14,6 +14,7 @@ Route::get('/projects', [\App\Http\Controllers\Portfolio\ProjectController::clas
 Route::get('/projects/{project:slug}', [\App\Http\Controllers\Portfolio\ProjectController::class, 'show'])->name('projects.show');
 Route::get('/services', \App\Http\Controllers\Portfolio\ServiceController::class)->name('services');
 Route::get('/resume', \App\Http\Controllers\Portfolio\ResumeController::class)->name('resume');
+Route::get('/resume/pdf', \App\Http\Controllers\Portfolio\ResumePdfController::class)->name('resume.pdf');
 Route::get('/contact', \App\Http\Controllers\Portfolio\ContactController::class)->name('contact');
 Route::post('/contact', [\App\Http\Controllers\Portfolio\ContactController::class, 'store'])->name('contact.store');
 
