@@ -10,7 +10,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $user = User::create([
-            'name' => 'Tahssin',
+            'name' => 'Leonce Ngendakuriyo',
             'email' => 'admin@portfolio.com',
             'password' => bcrypt('password'),
             'email_verified_at' => now(),
@@ -24,7 +24,6 @@ class DatabaseSeeder extends Seeder
             SkillSeeder::class,
             ExperienceSeeder::class,
             EducationSeeder::class,
-            CertificationSeeder::class,
             ProjectSeeder::class,
             ServiceSeeder::class,
             SocialLinkSeeder::class,
