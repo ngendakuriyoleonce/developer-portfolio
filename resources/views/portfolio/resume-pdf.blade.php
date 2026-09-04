@@ -39,10 +39,10 @@
     </div>
     
     <div class="content">
-        @if($profile->short_bio)
+        @if($profile->bio)
         <div class="section">
-            <h2>Profile</h2>
-            <p style="font-size: 10pt;">{{ $profile->short_bio }}</p>
+            <h2>Professional Summary</h2>
+            <p style="font-size: 10pt;">{{ $profile->bio }}</p>
         </div>
         @endif
 
@@ -61,7 +61,11 @@
         <div class="section">
             <h2>Experience</h2>
             @foreach($experiences as $exp)
-                <div class="item">
+                @if($exp->company === 'E-Commerce Management System')
+                    <div class="item" style="page-break-before: always;">
+                @else
+                    <div class="item">
+                @endif
                     <h3>{{ $exp->job_title }}</h3>
                     <div class="subtitle">{{ $exp->company }}{{ $exp->location ? ' · ' . $exp->location : '' }}</div>
                     <div class="date">{{ $exp->start_date->format('M Y') }} - {{ $exp->is_current ? 'Present' : $exp->end_date?->format('M Y') }}</div>
@@ -82,19 +86,6 @@
                 </div>
             @endforeach
         </div>
-
-        @if($certifications->count())
-        <div class="section">
-            <h2>Certifications</h2>
-            @foreach($certifications as $cert)
-                <div class="item">
-                    <h3>{{ $cert->name }}</h3>
-                    <div class="subtitle">{{ $cert->issuing_organization }}</div>
-                    <div class="date">{{ $cert->issue_date->format('M Y') }}</div>
-                </div>
-            @endforeach
-        </div>
-        @endif
 
         @if($projects->count())
         <div class="section">
