@@ -36,7 +36,7 @@
 
                             @if($exp->technologies)
                                 <div class="flex flex-wrap gap-2">
-                                    @foreach($exp->technibilities as $tech)
+                                    @foreach($exp->technologies as $tech)
                                         <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">{{ $tech }}</span>
                                     @endforeach
                                 </div>
