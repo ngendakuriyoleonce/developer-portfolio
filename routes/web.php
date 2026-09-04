@@ -9,7 +9,6 @@ Route::get('/about', \App\Http\Controllers\Portfolio\AboutController::class)->na
 Route::get('/skills', \App\Http\Controllers\Portfolio\SkillsController::class)->name('skills');
 Route::get('/experience', \App\Http\Controllers\Portfolio\ExperienceController::class)->name('experience');
 Route::get('/education', \App\Http\Controllers\Portfolio\EducationController::class)->name('education');
-Route::get('/certifications', \App\Http\Controllers\Portfolio\CertificationController::class)->name('certifications');
 Route::get('/projects', [\App\Http\Controllers\Portfolio\ProjectController::class, 'index'])->name('projects');
 Route::get('/projects/{project:slug}', [\App\Http\Controllers\Portfolio\ProjectController::class, 'show'])->name('projects.show');
 Route::get('/services', \App\Http\Controllers\Portfolio\ServiceController::class)->name('services');
