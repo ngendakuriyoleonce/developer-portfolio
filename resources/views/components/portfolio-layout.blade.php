@@ -64,14 +64,14 @@
         <!-- Footer -->
         <footer class="bg-gray-900 dark:bg-gray-950 text-gray-400 py-12 mt-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <p class="text-lg font-semibold text-white mb-2">Tahssin</p>
+                <p class="text-lg font-semibold text-white mb-2">Leonce Ngendakuriyo</p>
                 <p class="mb-4">Building modern web applications with Laravel.</p>
                 <div class="flex justify-center space-x-4 mb-6">
-                    <a href="https://github.com/tahssin" target="_blank" class="hover:text-white transition-colors">GitHub</a>
-                    <a href="https://linkedin.com/in/tahssin" target="_blank" class="hover:text-white transition-colors">LinkedIn</a>
-                    <a href="mailto:tahssin@portfolio.com" class="hover:text-white transition-colors">Email</a>
+                    <a href="https://github.com/ngendakuriyoleonce" target="_blank" class="hover:text-white transition-colors">GitHub</a>
+                    <a href="https://linkedin.com/in/leonce-ngendakuriyo" target="_blank" class="hover:text-white transition-colors">LinkedIn</a>
+                    <a href="mailto:ngendakuriyoleonce@gmail.com" class="hover:text-white transition-colors">Email</a>
                 </div>
-                <p class="text-sm">&copy; {{ date('Y') }} Tahssin. All rights reserved.</p>
+                <p class="text-sm">&copy; {{ date('Y') }} Leonce Ngendakuriyo. All rights reserved.</p>
             </div>
         </footer>
     </body>
