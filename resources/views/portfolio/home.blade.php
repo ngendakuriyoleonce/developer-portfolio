@@ -102,7 +102,7 @@
     <section class="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div class="max-w-4xl mx-auto px-4 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's Work Together</h2>
-            <p class="text-lg mb-8 opacity-90">I'm currently open to Junior Laravel / Full-Stack development opportunities.</p>
+            <p class="text-lg mb-8 opacity-90">I'm currently open to Full-Stack Laravel / Web development opportunities.</p>
             <a href="{{ route('contact') }}" class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-lg hover:bg-gray-100 transition-all duration-300">Get In Touch</a>
         </div>
     </section>
