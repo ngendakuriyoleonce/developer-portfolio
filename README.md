@@ -1,6 +1,6 @@
 # Developer Portfolio — Laravel 13
 
-A full-featured personal developer portfolio built with Laravel 13, featuring a public portfolio website, admin dashboard, REST API, Redis caching, Docker support, and PDF resume generation.
+A full-featured personal developer portfolio built with Laravel 13, featuring a public portfolio website, admin dashboard, REST API, Redis caching, and PDF resume generation.
 
 ## Features
 
@@ -15,7 +15,6 @@ A full-featured personal developer portfolio built with Laravel 13, featuring a 
 - **Contact System** — Contact form with message management
 - **Dark/Light Mode** — Theme toggle with localStorage
 - **Responsive Design** — Mobile-first with Tailwind CSS
-- **Docker** — Containerized deployment with Nginx
 - **Testing** — Feature and unit tests
 
 ## Tech Stack
@@ -29,7 +28,6 @@ A full-featured personal developer portfolio built with Laravel 13, featuring a 
 | Tailwind CSS | Styling |
 | Alpine.js | Interactivity |
 | Vite | Asset bundling |
-| Docker | Containerization |
 | Nginx | Web server |
 | DomPDF | PDF generation |
 | Spatie Permission | Authorization |
@@ -82,24 +80,6 @@ Visit: http://localhost:8000
 |---|---|---|
 | admin@portfolio.com | password | Admin |
 
-## Docker Setup
-
-```bash
-# Copy Docker environment
-cp .env.docker .env
-
-# Build and start containers
-docker compose up -d --build
-
-# Run migrations
-docker compose exec app php artisan migrate:fresh --seed
-
-# Generate key
-docker compose exec app php artisan key:generate
-```
-
-Visit: http://localhost:8080
-
 ## API Documentation
 
 ### Public Endpoints
@@ -142,7 +122,6 @@ GET /api/services      — Services offered
 │   ├── factories/          # Model factories
 │   ├── migrations/         # Database migrations
 │   └── seeders/            # Database seeders
-├── docker/                 # Docker configuration
 ├── resources/
 │   └── views/
 │       ├── admin/          # Admin dashboard views
@@ -152,8 +131,6 @@ GET /api/services      — Services offered
 │   ├── web.php             # Web routes
 │   └── api.php             # API routes
 ├── tests/                  # Automated tests
-├── Dockerfile
-├── docker-compose.yml
 └── README.md
 ```
 

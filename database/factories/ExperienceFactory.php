@@ -15,7 +15,7 @@ class ExperienceFactory extends Factory
             'location' => fake()->city() . ', ' . fake()->country(),
             'description' => fake()->paragraph(),
             'responsibilities' => [fake()->sentence(), fake()->sentence(), fake()->sentence()],
-            'technologies' => ['Laravel', 'PHP', 'MySQL', 'Redis', 'Docker'],
+            'technologies' => ['Laravel', 'PHP', 'MySQL', 'Redis'],
             'start_date' => fake()->dateTimeBetween('-3 years', '-1 year'),
             'end_date' => $isCurrent ? null : fake()->dateTimeBetween('-1 month', 'now'),
             'is_current' => $isCurrent,

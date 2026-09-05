@@ -40,14 +40,12 @@ class SkillSeeder extends Seeder
             ['skill_category_id' => $database->id, 'name' => 'PostgreSQL', 'slug' => 'postgresql', 'proficiency' => 60, 'order_column' => 3],
 
             // DevOps / Infrastructure
-            ['skill_category_id' => $devops->id, 'name' => 'Docker', 'slug' => 'docker', 'proficiency' => 70, 'order_column' => 1],
-            ['skill_category_id' => $devops->id, 'name' => 'Docker Compose', 'slug' => 'docker-compose', 'proficiency' => 70, 'order_column' => 2],
-            ['skill_category_id' => $devops->id, 'name' => 'Redis', 'slug' => 'redis', 'proficiency' => 70, 'order_column' => 3],
-            ['skill_category_id' => $devops->id, 'name' => 'Linux (Ubuntu)', 'slug' => 'linux', 'proficiency' => 70, 'order_column' => 4],
-            ['skill_category_id' => $devops->id, 'name' => 'Nginx', 'slug' => 'nginx', 'proficiency' => 65, 'order_column' => 5],
-            ['skill_category_id' => $devops->id, 'name' => 'VPS Deployment', 'slug' => 'vps', 'proficiency' => 65, 'order_column' => 6],
-            ['skill_category_id' => $devops->id, 'name' => 'Git', 'slug' => 'git', 'proficiency' => 85, 'order_column' => 7],
-            ['skill_category_id' => $devops->id, 'name' => 'GitHub', 'slug' => 'github', 'proficiency' => 85, 'order_column' => 8],
+            ['skill_category_id' => $devops->id, 'name' => 'Redis', 'slug' => 'redis', 'proficiency' => 70, 'order_column' => 1],
+            ['skill_category_id' => $devops->id, 'name' => 'Linux (Ubuntu)', 'slug' => 'linux', 'proficiency' => 70, 'order_column' => 2],
+            ['skill_category_id' => $devops->id, 'name' => 'Nginx', 'slug' => 'nginx', 'proficiency' => 65, 'order_column' => 3],
+            ['skill_category_id' => $devops->id, 'name' => 'VPS Deployment', 'slug' => 'vps', 'proficiency' => 65, 'order_column' => 4],
+            ['skill_category_id' => $devops->id, 'name' => 'Git', 'slug' => 'git', 'proficiency' => 85, 'order_column' => 5],
+            ['skill_category_id' => $devops->id, 'name' => 'GitHub', 'slug' => 'github', 'proficiency' => 85, 'order_column' => 6],
         ];
 
         foreach ($skills as $skill) {
